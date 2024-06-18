@@ -1,0 +1,527 @@
+body{
+  position: sticky;
+}
+section{
+    min-height: 100vh;
+}
+.page-sidebar-menu{
+    position: sticky;
+}
+*{
+    scroll-behavior: smooth;
+}
+
+/* Hide the default checkbox */
+.container input {
+    position: absolute;
+    /* opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0; */
+  }
+  .container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 2.3em;
+    width: 2.3em;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: .4s;
+  }
+  
+  .checkmark:hover {
+    box-shadow: inset 17px 17px 16px #b3b3b3,
+              inset -17px -17px 16px #ffffff;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    box-shadow: none;
+    background-color: limegreen;
+    transform: rotateX(360deg);
+  }
+  
+  .container input:checked ~ .checkmark:hover {
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 0.96em;
+    top: 0.7em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    box-shadow: 0.1em 0.1em 0em 0 rgba(0,0,0,0.3);
+    transform: rotate(45deg);
+  }
+  #home{
+    display: block;
+  }
+  .courses a{
+    font-size: larger;
+    text-decoration: none;
+  }
+  
+  .courses {
+    padding: 40px 0;
+    background-color: #f5f5f5;
+  }
+  
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+  }
+  
+  .course-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .course-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .course-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  .button {
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .button:hover {
+    box-shadow: .5px .5px 150px #252525;
+  }
+  
+  .type1::after {
+    content: "Now ";
+    height: 50px;
+    width: 150px;
+    background-color: #008080;
+    color: #fff;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translateY(50px);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .type1::before {
+    content: "Enroll ";
+    height: 50px;
+    width: 150px;
+    background-color: #506fe2;
+    color: #fefefe;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translateY(0px) scale(1.2);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .type1:hover::after {
+    transform: translateY(0) scale(1.2);
+  }
+  
+  .type1:hover::before {
+    transform: translateY(-50px) scale(0) rotate(120deg);
+  }
+/* Define keyframes for animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply animation to the attendance container */
+.attendance-container {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Style for the attendance header */
+.attendance-header {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Style for the attendance subheader */
+.attendance-subheader {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Style for the attendance form */
+.attendance-form {
+  text-align: center;
+}
+
+/* Style for the attendance label */
+.attendance-label {
+  font-size: 16px;
+}
+
+/* Style for the attendance input */
+.attendance-input {
+  width: 200px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+/* Style for the attendance button */
+.attendance-button {
+  width: 220px;
+  height: 40px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for the attendance button */
+.attendance-button:hover {
+  background-color: #45a049;
+}
+
+/* Style for the attendance result */
+.attendance-result {
+  font-size: 18px;
+  margin-top: 20px;
+}
+.form-container {
+  /* background: linear-gradient(#212121, #212121) padding-box, */
+    /* linear-gradient(120deg, transparent 25%, #1cb0ff, #40ff99) border-box; */
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  color: black;
+  /* display: flex; */
+  /* flex-direction: column; */
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  width: 50%;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.form-input {
+  background: transparent;
+  border: 1px solid #414141;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+}
+
+button {
+  border-radius: 5px;
+  padding: 6px;
+  background: #ffffff14;
+  color: #c7c5c5;
+  border: 1px solid #414141;
+}
+
+button:hover {
+  background: #212121;
+  cursor: pointer;
+  color: white;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #414141;
+  position: relative;
+}
+
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+  top: -16px;
+  left: 0;
+  background: white padding-box;
+  padding: 10px 0 0 0;
+  color: #bdb8b8;
+
+  font-size: 12px;
+}
+.attendance-head{
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  /* -webkit-backdrop-filter: blur(16px) saturate(180%); */
+  background-color: rgba(251, 251, 251, 0.244);
+  border-radius: 12px;
+  border: 1px solid rgba(49, 98, 172, 0.3);
+  max-width: 500px;
+  margin-top: 10px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+}
+h1{
+  text-align: center;
+
+}
+
+.attendance-form{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+
+}
+#attendance{
+  display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+}
+.attendanceform{
+  width: 50%;
+}
+#cgpa{
+  justify-content: center;
+  align-content: center;
+}
+.attendance-dropdown select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 1000%;
+  max-width: 300px; /* Adjust width as needed */
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.concept-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-bar input[type="search"] {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button[type="button"] {
+  width: 20%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar button[type="button"]:hover {
+  background-color: #3e8e41;
+}
+
+.pdf-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.pdf-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pdf-link img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.pdf-link h4 {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.pdf-link:hover {
+  background-color: #f0f0f0;
+}#concept-map {
+  padding: 20px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
+}
+
+.search-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.pdf-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+.pdf-item {
+  text-align: center;
+}
+
+.pdf-thumbnail {
+  width: 100px;
+  height: 150px;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.pdf-title {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.pdf-link {
+  text-decoration: none;
+  color: #333;
+}
+.pdf-thumbnail {
+  width: 100px;
+  height: 100px;
+  background-image: linear-gradient(to left, #4CAF50, #dce1d6);
+  background-size: 200px 100px;
+  background-position: 0% 0%;
+  animation: gradient 10s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+#concept-map{
+  padding-top: 3%;
+}

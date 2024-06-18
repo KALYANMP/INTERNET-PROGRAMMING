@@ -1,0 +1,144 @@
+.bill-type {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .amount {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .add-bill {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-bill:hover {
+    background-color: #3e8e41;
+  }
+  
+  .bills-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bill {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .bill:last-child {
+    border-bottom: none;
+  }
+  
+  .remove-bill {
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .remove-bill:hover {
+    color: #333;
+  }
+  
+  .total-amount {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  #Financial-Analysis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .financial-section{
+    color: black;
+  }
+  .bills-table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .bills-table th, .bills-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  .bills-table th {
+    background-color: #f2f2f2;
+  }
+  .financial-section form label{
+    color: black;
+  }
+  .financial-section {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .section-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .bill-type-select,
+  .amount-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .add-bill-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-bill-button:hover {
+    background-color: #45a049;
+  }
+  
+  .bills-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .bills-table th,
+  .bills-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .bills-table th {
+    text-align: left;
+  }
+  
+  .total-amount-container {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .total-amount {
+    font-size: 18px;
+  }
+  

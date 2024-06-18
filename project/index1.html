@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="register">
+    <form action="register.php" id="register-form" method="post">
+        <div class="heading">
+        <h1>Registration Form</h1></div>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username"><br><br>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"><br><br>
+        <label for="retypepassword">Retype Password</label>
+        <input type="password" name="retypepassword" id="retypepassword"><br><br>
+        <input type="submit" class="submit" value="REGISTER">
+        <button type="button"class="tog" onclick="toggle()"><a href="login.html">Already have an account</a></button>
+        <b><p id="error-message" style="color: red;"></p></b>
+    </form>
+</section>
+<script src="script.js"></script>
+<script>
+   document.getElementById("register-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var formData = new FormData(this);
+    // Send form data via AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "register.php", true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Successful response received
+                var response = xhr.responseText;
+                if (response === "success") {
+                    window.location.href = "login.html";
+                } else {
+                    document.getElementById("error-message").textContent = response;
+                }
+            } else {
+                console.error("AJAX request failed with status: " + xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+});
+
+    </script>
+    <script>
+        document.getElementById("register-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        // Send form data via AJAX
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "register.php", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    if (response === "success") {
+                        window.location.href = "home.html";
+                    } else {
+                        document.getElementById("error-message1").textContent = response;
+                    }
+                } else {
+                    console.error("AJAX request failed with status: " + xhr.status);
+                }
+            }
+        };
+        xhr.send(formData);
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="login">
+        <form id="login-form" method="post">
+            <div class="heading">
+            <h1>Welcome Back </h1></div>
+            <label for="username">Username  </label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" class="submit" value="Login">
+            <a href="reset.html">Forgot Password</a><br>
+            <button type="button" class="tog" onclick="sign()"><a href="index.html">Don't have an account  Register</a> </button>
+            <b><p id="error-message" style="color: red;"></p></b>
+        </form>
+    </section>
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var formData = new FormData(this);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "login.php", true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                var response = xhr.responseText;
+                var responseParts = response.split(" ");
+                if (responseParts[0] === "success") {
+                    var usernameInput = document.getElementById("username");
+                    var username = usernameInput.value;
+                    window.location.href = "arms/arms/StudentPortal/Landing.html?username="+ username;
+                } else {
+                    document.getElementById("error-message").textContent = response;
+                }
+            } else {
+                // Error occurred
+                console.error("AJAX request failed with status: " + xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+});
+    </script>
+</body>
+
+</html>

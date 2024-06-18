@@ -1,0 +1,1 @@
+[{"GradeId":16053227,"SubjectCode":"CSA4380","SubjectName":"Internet Programming for Packets Delivery","totaldays":0,"feedbacktoname":"Dr. Jayasakthi Velmurugan K ","GradeOn":"13/06/2024"}]

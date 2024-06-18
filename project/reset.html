@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>Reset Password</title>
+    <link rel="icon" href="https://lh3.googleusercontent.com/drive-viewer/AKGpihbTS1dJAy56i2Z3L0F1Cj3QMhfeG1gsxsRLJOhAp7PPkp6lnbVvvWGVRTis58qI9OF9iDuCTub9UT406vkvrmYQ6-VLJqCIPss=s2560" type="image/x-icon">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://wallpapercave.com/wp/wp2885573.png') ;
+background-position: center;
+background-size: cover;
+
+        }
+
+        form {
+            backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Input Styles */
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        /* Button Styles */
+        button[type="submit"], .login-button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover, .login-button:hover {
+            background: #0056b3;
+        }
+
+        /* Hidden Elements */
+        .hidden {
+            display: none;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <form id="reset" action="reset.php" method="POST">
+            <input type="text" name="username" placeholder="Enter the username" class="username"><br>
+            <button type="submit">RESET</button>
+        </form>
+        <form id="reset-password-form" class="hidden">
+            <input type="hidden" name="username" id="username-hidden">
+            <input type="password" name="password" placeholder="Enter new password" required><br>
+            <button type="submit">Update Password</button>
+        </form>
+        <div id="message" class="hidden">
+            <p id="response-message" style="color: white;" ></p>
+            <button class="login-button hidden" onclick="redirectToLogin()">Login</button>
+        </div>
+    </div>
+</body>
+</html>
